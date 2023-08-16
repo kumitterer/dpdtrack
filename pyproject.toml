@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pykeydelivery"
+version = "0.9.0"
+authors = [
+  { name="Kumi Mitterer", email="pykeydelivery@kumi.email" },
+]
+description = "Simple Python wrapper to fetch data from KeyDelivery (kd100.com)"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://kumig.it/kumitterer/pykeydelivery"
+"Bug Tracker" = "https://kumig.it/kumitterer/pykeydelivery/issues"
