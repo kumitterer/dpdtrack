@@ -2,6 +2,7 @@ image: python:3.10
 
 stages:
   - test
+  - publish
 
 before_script:
   - python -V
