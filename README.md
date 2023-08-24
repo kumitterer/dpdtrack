@@ -17,8 +17,6 @@ from glsapi import GLSAPI
 
 api = GLSAPI()
 
-carrier_options = api.detect_carrier("YOUR_SHIPMENT_NUMBER")
-
 # Realtime tracking
 
 tracking = api.tracking("YOUR_SHIPMENT_NUMBER")
