@@ -1,29 +1,27 @@
-# KeyDelivery API Python Client
+# GLS REST API Python Client
 
-This is a Python client for the KeyDelivery API. It is a wrapper around the [KeyDelivery](https://kd100.com/) API, which allows you to track your shipments.
+This is a Python client for the GLS (https://gls-group.eu) REST API. It allows you to track your shipments.
 
-It is not fully featured yet, but it is a good starting point.
+It currently only supports package tracking, not any other API endpoints.
 
 ## Installation
 
 ```bash
-pip install git+https://kumig.it/kumitterer/pykeydelivery
+pip install git+https://kumig.it/kumitterer/glsapi.git
 ```
 
 ## Usage
 
 ```python
-from keydelivery import KeyDelivery
+from glsapi import GLSAPI
 
-api = KeyDelivery("YOUR_API_KEY", "YOUR_API_SECRET")
-
-# Find carrier by shipment number
+api = GLSAPI()
 
 carrier_options = api.detect_carrier("YOUR_SHIPMENT_NUMBER")
 
 # Realtime tracking
 
-tracking = api.realtime("CARRIER_CODE", "YOUR_SHIPMENT_NUMBER")
+tracking = api.tracking("YOUR_SHIPMENT_NUMBER")
 ```
 
 ## License

@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pykeydelivery"
+name = "glsapi"
 version = "0.9.0"
 authors = [
-  { name="Kumi Mitterer", email="pykeydelivery@kumi.email" },
+  { name="Kumi Mitterer", email="glsapi@kumi.email" },
 ]
-description = "Simple Python wrapper to fetch data from KeyDelivery (kd100.com)"
+description = "Simple Python wrapper to fetch data from GLS (gls-group.eu)"
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.10"
@@ -19,5 +19,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://kumig.it/kumitterer/pykeydelivery"
-"Bug Tracker" = "https://kumig.it/kumitterer/pykeydelivery/issues"
+"Homepage" = "https://kumig.it/kumitterer/glsapi"
+"Bug Tracker" = "https://kumig.it/kumitterer/glsapi/issues"
