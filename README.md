@@ -7,7 +7,7 @@ It currently only supports package tracking, not any other API endpoints.
 ## Installation
 
 ```bash
-pip install git+https://kumig.it/kumitterer/glsapi.git
+pip install glsapi
 ```
 
 ## Usage
