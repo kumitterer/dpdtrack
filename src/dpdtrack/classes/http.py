@@ -4,7 +4,7 @@ import json
 
 
 class HTTPRequest(Request):
-    USER_AGENT = "Mozilla/5.0 (compatible; GLSAPI/dev; +https://kumig.it/kumitterer/glsapi)"
+    USER_AGENT = "Mozilla/5.0 (compatible; DPDTrack/dev; +https://kumig.it/kumitterer/dpdtrack)"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,3 +15,7 @@ class HTTPRequest(Request):
         if load_json:
             response = json.loads(response)
         return response
+
+    def add_json_payload(self, payload: dict):
+        self.add_header("Content-Type", "application/json")
+        self.data = json.dumps(payload).encode("utf-8")

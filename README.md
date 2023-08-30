@@ -1,25 +1,29 @@
-# GLS REST API Python Client
+# myDPD Python Client
 
-This is a Python client for the GLS (https://gls-group.eu) REST API. It allows you to track your shipments.
+This is a Python client for the myDPD Austria (https://mydpd.at) tracker. It allows you to track your shipments.
 
-It currently only supports package tracking, not any other API endpoints.
+It currently *only* supports DPD Austria. If you want to add support for other countries, feel free to open a pull request. Tracking for DPD shipments in other countries *may* work, but it is not guaranteed.
 
 ## Installation
 
 ```bash
-pip install glsapi
+pip install dpdtrack
 ```
 
 ## Usage
 
 ```python
-from glsapi import GLSAPI
+from dpdtrack import DPD
 
-api = GLSAPI()
+api = DPD()
 
 # Realtime tracking
 
 tracking = api.tracking("YOUR_SHIPMENT_NUMBER")
+
+# Optionally pass the recipient's postal code to get more accurate results
+
+tracking = api.tracking("YOUR_SHIPMENT_NUMBER", "RECIPIENT_POSTAL_CODE")
 ```
 
 ## License

@@ -3,7 +3,7 @@ from configparser import ConfigParser
 
 import json
 
-from glsapi import *
+from dpdtrack import *
 
 class TestHTTPRequest(TestCase):
     def test_http_request(self):
@@ -11,12 +11,19 @@ class TestHTTPRequest(TestCase):
         response = http.execute()
         self.assertEqual(response["headers"]["User-Agent"], http.USER_AGENT)
 
-class TestGLSAPI(TestCase):
+class TestDPD(TestCase):
     def setUp(self):
-        self.api = GLSAPI()
+        self.api = DPD()
 
-    def test_gls_api(self):
-        tracking_number = "483432314669"
+    def test_tracking(self):
+        tracking_number = "01155036780055"
         response = self.api.tracking(tracking_number)
-        unitno = [x for x in response["tuStatus"][0]["references"] if x["type"] == "UNITNO"][0]["value"]
-        self.assertTrue(tracking_number.startswith(unitno))
+        self.assertEqual(response["state"], "success")
+        self.assertEqual(response["data"][0]["pno"], tracking_number)
+
+    def test_tracking_with_postal_code(self):
+        tracking_number = "01155036780055"
+        postal_code = "8010"
+        response = self.api.tracking(tracking_number, postal_code)
+        self.assertEqual(response["state"], "success")
+        self.assertEqual(response["data"][0]["pno"], tracking_number)
