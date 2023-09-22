@@ -8,7 +8,7 @@ version = "0.10.0"
 authors = [
   { name="Kumi Mitterer", email="dpdtrack@kumi.email" },
 ]
-description = "Simple Python wrapper to fetch data from DPD Austria (mydpd.at)"
+description = "Simple Python wrapper to fetch data from DPD Austria (mydpd.at) and Romania (dpd.ro)"
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.10"
