@@ -13,9 +13,10 @@ pip install dpdtrack
 ## Usage
 
 ```python
-from dpdtrack import DPD
+from dpdtrack import DPDAT, DPDRO
 
-api = DPD()
+api = DPDAT() # For tracking of DPD Austria packages
+# api = DPDRO() for tracking of DPD Romania packages
 
 # Realtime tracking
 
